@@ -1,0 +1,5 @@
+Unix Example
+cat input/4300.txt | ./word_count.py map | ./sort.py | ./word_count.py reduce > output/4300-wc.txt
+
+Hadoop Example
+hadoop jar $HADOOP_INSTALL/contrib/streaming/hadoop-*-streaming.jar -input input/4300.txt -output output -mapper "word_count.py map" -reducer "word_count.py reduce" -file word_count.py

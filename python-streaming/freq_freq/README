@@ -1,0 +1,7 @@
+Takes the output of word count and makes a freq of freq histogram.
+
+Unix Example
+cat input/4300-wc.txt | ./freq_freq.py map | sort -n | ./freq_freq.py reduce > output/4300-ff.txt
+
+Hadoop Example
+hadoop jar $HADOOP_INSTALL/contrib/streaming/hadoop-*-streaming.jar -input input/4300-wc.txt -output output -mapper "freq_freq.py map" -reducer "freq_freq.py reduce" -file freq_freq.py
